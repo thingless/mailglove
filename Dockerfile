@@ -1,5 +1,5 @@
-From ubuntu:trusty
-MAINTAINER Elliott Ye
+From ubuntu:xenial
+MAINTAINER Richard Klafter
 
 # Set noninteractive mode for apt-get
 ENV DEBIAN_FRONTEND noninteractive
@@ -9,7 +9,7 @@ RUN apt-get update
 
 # Start editing
 # Install package here for cache
-RUN apt-get -y install supervisor postfix sasl2-bin opendkim opendkim-tools
+RUN apt-get -y install supervisor postfix
 
 # Add files
 ADD assets/install.sh /opt/install.sh
