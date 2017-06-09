@@ -1,3 +1,4 @@
 debug.sh
 sftp-config.json
 assets/domainkeys/mail.*
+assets/node_modules

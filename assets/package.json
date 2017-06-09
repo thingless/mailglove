@@ -1,0 +1,22 @@
+{
+  "name": "mailglove",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webhook.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thingless/mailglove.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thingless/mailglove/issues"
+  },
+  "homepage": "https://github.com/thingless/mailglove",
+  "dependencies": {
+    "mailparser": "^2.0.5"
+  }
+}
