@@ -13,12 +13,26 @@ function makeRequest(options){
     })
 }
 
+function mapToObject(map) {
+    var out = Object.create(null)
+    map.forEach((value, key) => {
+        if (value instanceof Map) {
+            out[key] = map_to_object(value)
+        }
+        else {
+            out[key] = value
+        }
+    })
+    return out
+}
+
 simpleParser(process.stdin)
     .then(mail=>{
         var body = mail;
         body.envelopeRecipient = process.argv[2];
         body.envelopeSender = process.argv[3];
         body.envelopeSize = parseInt(process.argv[4]);
+        body.headers = mapToObject(mail.headers);
         return makeRequest({
             uri: WEBHOOK_URL,
             method: "POST",
