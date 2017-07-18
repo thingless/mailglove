@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:7.10
-    working_directory: /go/src/github.com/CircleCI-Public/circleci-demo-docker
     steps:
       - checkout
       - setup_remote_docker
