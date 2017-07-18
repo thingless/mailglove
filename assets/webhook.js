@@ -16,11 +16,11 @@ function makeRequest(options){
 simpleParser(process.stdin)
     .then(mail=>{
         var body = mail;
-        body.envelope_recipient = process.argv[2];
-        body.envelope_sender = process.argv[3];
-        body.envelope_size = parseInt(process.argv[4]);
+        body.envelopeRecipient = process.argv[2];
+        body.envelopeSender = process.argv[3];
+        body.envelopeSize = parseInt(process.argv[4]);
         return makeRequest({
-            uri:WEBHOOK_URL,
+            uri: WEBHOOK_URL,
             method: "POST",
             json: true,
             headers: {"content-type": "application/json"},

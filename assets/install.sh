@@ -26,7 +26,7 @@ service postfix start
 tail -f /var/log/mail.log
 EOF
 chmod +x /opt/postfix.sh
-postconf -e myhostname=$DOMAIN
+postconf -e myhostname=${DOMAIN}
 postconf -F '*/*/chroot = n'
 
 # Add the myhook hook to the end of master.cf
