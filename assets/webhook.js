@@ -38,7 +38,7 @@ simpleParser(process.stdin)
             method: "POST",
             json: true,
             headers: {"content-type": "application/json"},
-            body: JSON.stringify(body),
+            body: body,
         })
         .then((response)=>{
             if(response.statusCode !== 200)
