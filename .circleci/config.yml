@@ -11,5 +11,7 @@ jobs:
           docker build -t thingless/mailglove:$TAG .
           docker login -u $DOCKER_USER -p $DOCKER_PASS
           docker push thingless/mailglove:$TAG
+          docker tag thingless/mailglove:$TAG thingless/mailglove:latest
+          docker push thingless/mailglove:latest
     branches:
       only: master
