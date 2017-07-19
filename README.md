@@ -1,6 +1,6 @@
 mailglove
 ==============
-Accept inbound email to a domain and post to a webhook with every new email.
+Accept inbound email on your domain and post it to an HTTP webhook.
 
 Usage
 =====
