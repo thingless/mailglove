@@ -1,4 +1,4 @@
-![circleci status](https://circleci.com/gh/thingless/mailglove.svg?style=shield)
+[![circleci status](https://circleci.com/gh/thingless/mailglove.svg?style=shield)](https://hub.docker.com/r/thingless/mailglove/)
 
 mailglove
 ==============
