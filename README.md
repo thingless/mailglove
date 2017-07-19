@@ -1,3 +1,5 @@
+![circleci status](https://circleci.com/gh/thingless/mailglove.svg?style=shield)
+
 mailglove
 ==============
 Accept inbound email on your domain and post it to an HTTP webhook.
