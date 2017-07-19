@@ -1,0 +1,87 @@
+{
+    "to": {
+        "html": "<span class=\"mp_address_group\"><a href=\"mailto:moxy@quail.example.io\" class=\"mp_address_email\">moxy@quail.example.io</a></span>",
+        "text": "moxy@quail.example.io",
+        "value": [
+            {
+                "name": "",
+                "address": "moxy@quail.example.io"
+            }
+        ]
+    },
+    "date": "2017-07-18T20:06:22.000Z",
+    "from": {
+        "html": "<span class=\"mp_address_group\"><span class=\"mp_address_name\">Eric</span> &lt;<a href=\"mailto:eric@example.io\" class=\"mp_address_email\">eric@example.io</a>&gt;</span>",
+        "text": "Eric <eric@example.io>",
+        "value": [
+            {
+                "name": "Eric",
+                "address": "eric@example.io"
+            }
+        ]
+    },
+    "html": false,
+    "text": "This one will definitely work, 100% for sure!\n\n-- \nEric\n\n",
+    "headers": {
+        "to": {
+            "html": "<span class=\"mp_address_group\"><a href=\"mailto:moxy@quail.example.io\" class=\"mp_address_email\">moxy@quail.example.io</a></span>",
+            "text": "moxy@quail.example.io",
+            "value": [
+                {
+                    "name": "",
+                    "address": "moxy@quail.example.io"
+                }
+            ]
+        },
+        "date": "2017-07-18T20:06:22.000Z",
+        "from": {
+            "html": "<span class=\"mp_address_group\"><span class=\"mp_address_name\">Eric</span> &lt;<a href=\"mailto:eric@example.io\" class=\"mp_address_email\">eric@example.io</a>&gt;</span>",
+            "text": "Eric <eric@example.io>",
+            "value": [
+                {
+                    "name": "Eric",
+                    "address": "eric@example.io"
+                }
+            ]
+        },
+        "subject": "Quail test will work!",
+        "received": [
+            "from mail-pg0-f53.google.com (mail-pg0-f53.google.com [74.125.83.53]) by quail.example.io (Postfix) with ESMTPS id 13AD64FC for <moxy@quail.example.io>; Tue, 18 Jul 2017 20:06:25 +0000 (UTC)",
+            "by mail-pg0-f53.google.com with SMTP id 123so18338526pgj.1 for <moxy@quail.example.io>; Tue, 18 Jul 2017 13:06:25 -0700 (PDT)",
+            "from [192.168.45.201] (172-9-106-75.lightspeed.sntcca.sbcglobal.net. [172.9.106.75]) by smtp.gmail.com with ESMTPSA id h27sm6888566pfd.34.2017.07.18.13.06.23 for <moxy@quail.example.io> (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Tue, 18 Jul 2017 13:06:23 -0700 (PDT)"
+        ],
+        "message-id": "<13eecb1f-b7bc-b8dd-01cc-22889d00a66c@example.io>",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Thunderbird/52.2.1",
+        "x-received": "by 10.98.36.198 with SMTP id k67mr3414654pfk.154.1500408384180; Tue, 18 Jul 2017 13:06:24 -0700 (PDT)",
+        "content-type": {
+            "value": "text/plain",
+            "params": {
+                "charset": "utf-8"
+            }
+        },
+        "mime-version": "1.0",
+        "dkim-signature": {
+            "value": "v=1",
+            "params": {
+                "a": "rsa-sha256",
+                "b": "KTks/pduZvjhkzG3hM8QE3t6UwOTHW1/f5LxvJQ7DROMDGLxW6i9apzWlw5SM2h0Te MLXKa3rtoOlshidSn9vlqP/JyiwfKrS67WUTwXFI/N7LbBS+l4P50SbtTYPGgbEW2by1 RsCxXBzxHEyjCRzxt8mbNCZPf+T4mISyPbHhItP2bpFEpNCHyvbyozHKB5ulcw/0zc7K Dz8Q6t4PuPvEPZL9pAjgIM3rzzC8xGV0RIrfbi2gExh68HvSFYiTX+2arbmV1/zs8kvq 5rmWdXRcA5X3W8/4g83/Ibx2vfEUrBr2o6/TYsrpKuxvJ+7FVNwENP6DdRtdTweiM0EU wscw==",
+                "c": "relaxed/relaxed",
+                "d": "example-io.20150623.gappssmtp.com",
+                "h": "to:from:subject:message-id:date:user-agent:mime-version :content-transfer-encoding:content-language",
+                "s": "20150623",
+                "bh": "QH3MQF5+QS6pvU+UUm62dmUVHdZPwdYp/bXkx8eOidg="
+            }
+        },
+        "content-language": "en-US",
+        "x-gm-message-state": "AIVw112ljgisb6MdkjVpcj2f4HOp4Eielc+uT7pHeiOfvL/TYyQ6B29m reJOOnS2B0tcXPRgFu3WQnZH",
+        "x-google-dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net; s=20161025; h=x-gm-message-state:to:from:subject:message-id:date:user-agent :mime-version:content-transfer-encoding:content-language",
+        "content-transfer-encoding": "7bit"
+    },
+    "subject": "Quail test will work!",
+    "messageId": "<13eecb1f-b7bc-b8dd-01cc-22889d00a66c@example.io>",
+    "textAsHtml": "<p>This one will definitely work, 100% for sure!</p><p>--<br/>Eric</p>",
+    "attachments": [],
+    "envelopeSize": 2785,
+    "envelopeSender": "eric@example.io",
+    "envelopeRecipient": "moxy@quail.example.io"
+}
