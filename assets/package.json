@@ -1,7 +1,7 @@
 {
   "name": "mailglove",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Post parsed mail to an HTTP webhook",
   "main": "webhook.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,14 +10,15 @@
     "type": "git",
     "url": "https://github.com/thingless/mailglove.git"
   },
-  "author": "",
+  "author": "Richard Klafter",
+  "contributors": ["raaowx"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/thingless/mailglove/issues"
   },
   "homepage": "https://github.com/thingless/mailglove",
   "dependencies": {
-    "mailparser": "^2.0.5",
-    "request": "^2.81.0"
+    "mailparser": "^3.3.0",
+    "request": "^2.88.2"
   }
 }

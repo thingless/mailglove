@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/local/bin/node
 var simpleParser = require('mailparser').simpleParser;
 var request = require('request');
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #supervisor.conf already exists? do not reinstall!
 if [[ -a /etc/supervisor/conf.d/supervisord.conf ]]; then
@@ -21,7 +21,7 @@ EOF
 #  postfix
 ############
 cat >> /opt/postfix.sh <<EOF
-#!/bin/bash
+#!/usr/bin/env bash
 service postfix start
 tail -f /var/log/mail.log
 EOF

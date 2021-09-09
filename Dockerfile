@@ -1,5 +1,6 @@
-From ubuntu:xenial
-MAINTAINER Richard Klafter
+FROM node:16
+LABEL "authors"="Richard Klafter,raaowx"
+LABEL "version"="1.1.0"
 
 # Set noninteractive mode for apt-get
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,9 +11,7 @@ RUN apt-get update
 # Start editing
 # Install package here for cache
 RUN apt-get install -y --no-install-recommends apt-utils
-RUN apt-get -y install supervisor postfix curl rsyslog
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get -y install nodejs
+RUN apt-get install -y  supervisor postfix curl rsyslog
 
 # Add files & install node requirements
 ADD assets/install.sh /opt/install.sh
