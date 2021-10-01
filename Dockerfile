@@ -1,4 +1,4 @@
-From ubuntu:xenial
+From ubuntu:focal
 MAINTAINER Richard Klafter
 
 # Set noninteractive mode for apt-get
@@ -11,7 +11,7 @@ RUN apt-get update
 # Install package here for cache
 RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get -y install supervisor postfix curl rsyslog
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get -y install nodejs
 
 # Add files & install node requirements
