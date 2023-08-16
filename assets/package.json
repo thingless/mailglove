@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/thingless/mailglove",
   "dependencies": {
-    "mailparser": "^2.8.1",
+    "mailparser": "^3.6.5",
     "request": "^2.88.2"
   }
 }
