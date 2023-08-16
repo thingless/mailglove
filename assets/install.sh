@@ -9,23 +9,19 @@ fi
 cat > /etc/supervisor/conf.d/supervisord.conf <<EOF
 [supervisord]
 nodaemon=true
+logfile=/dev/null
+logfile_maxbytes=0
 
 [program:postfix]
-command=/opt/postfix.sh
-
-[program:rsyslog]
-command=/usr/sbin/rsyslogd -n
+command=postfix start-fg
+stdout_logfile=/dev/fd/1
+stdout_logfile_maxbytes=0
+redirect_stderr=true
 EOF
 
 ############
 #  postfix
 ############
-cat >> /opt/postfix.sh <<EOF
-#!/bin/bash
-service postfix start
-tail -f /var/log/mail.log
-EOF
-chmod +x /opt/postfix.sh
 postconf -e myhostname=${DOMAIN}
 postconf -F '*/*/chroot = n'
 
@@ -33,6 +29,11 @@ postconf -F '*/*/chroot = n'
 tee -a /etc/postfix/master.cf <<'EOF'
 myhook unix - n n - - pipe
     flags=F user=nobody argv=/opt/webhook.js ${recipient} ${sender} ${size}
+EOF
+
+# Enable logging output to stdout with postlog daemon
+tee -a /etc/postfix/master.cf <<'EOF'
+postlog   unix-dgram n  -       n       -       1       postlogd
 EOF
 
 # Make SMTP use myhook
@@ -43,6 +44,9 @@ postconf -F 'bounce/unix/command = discard'
 
 # Disable local recipient maps so nothing is dropped b/c of non-existent email
 postconf 'local_recipient_maps ='
+
+# Enable logging to foreground in postlog
+postconf -e 'maillog_file = /dev/stdout'
 
 # Make the webhook.js use the correct URI
 sed -i "s/__URL__/${URL//\//\\/}/" /opt/webhook.js

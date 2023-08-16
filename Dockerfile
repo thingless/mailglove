@@ -4,15 +4,12 @@ MAINTAINER Richard Klafter
 # Set noninteractive mode for apt-get
 ENV DEBIAN_FRONTEND noninteractive
 
-# Update
-RUN apt-get update
-
-# Start editing
 # Install package here for cache
-RUN apt-get install -y --no-install-recommends apt-utils
-RUN apt-get -y install supervisor postfix curl rsyslog
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get -y install nodejs
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends apt-utils supervisor postfix curl rsyslog \
+    && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+    && apt-get -y install nodejs \
+    && apt-get clean && rm -rf /var/cache/apt/lists
 
 # Add files & install node requirements
 ADD assets/install.sh /opt/install.sh
