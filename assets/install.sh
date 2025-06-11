@@ -51,6 +51,9 @@ postconf -e 'maillog_file = /dev/stdout'
 # Make the webhook.js use the correct URI
 sed -i "s/__URL__/${URL//\//\\/}/" /opt/webhook.js
 
+# Make MAX_EMAIL_SIZE. 1MB emails by default
+sed -i "s/__MAX_EMAIL_SIZE__/${MAX_EMAIL_SIZE:-1000000}/" /opt/webhook.js
+
 #############
 ## Enable TLS
 #############

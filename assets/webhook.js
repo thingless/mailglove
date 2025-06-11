@@ -3,7 +3,7 @@ var simpleParser = require('mailparser').simpleParser;
 var request = require('request');
 
 var WEBHOOK_URL = '__URL__'; //NOTE: can include basic auth in url!
-var MAX_SIZE = parseInt(process.env.MAX_EMAIL_SIZE || 1000000); // Allow up to 1MB emails by default
+var MAX_SIZE = parseInt(__MAX_EMAIL_SIZE__);
 
 function makeRequest(options){
     return new Promise((resolve, reject)=>{
