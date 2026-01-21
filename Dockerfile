@@ -1,13 +1,12 @@
-From ubuntu:jammy
-MAINTAINER Richard Klafter
+FROM ubuntu:noble
 
 # Set noninteractive mode for apt-get
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install package here for cache
 RUN apt-get update \
     && apt-get install -y --no-install-recommends apt-utils supervisor postfix curl rsyslog ca-certificates openssl \
-    && curl -sL https://deb.nodesource.com/setup_18.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_24.x | bash - \
     && apt-get -y install nodejs \
     && apt-get clean && rm -rf /var/cache/apt/lists
 
@@ -18,4 +17,4 @@ ADD assets/webhook.js /opt/webhook.js
 RUN cd /opt; npm install; chmod +x /opt/webhook.js
 
 # Run
-CMD /opt/install.sh;/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+CMD ["bash", "-c", "/opt/install.sh; /usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
